@@ -15,6 +15,13 @@ verifier:
   name: inspec
 
 platforms:
+  -name: centos-7
+  driver:
+    image: centos-7
+    intermediate_instructions:
+    - RUN yum install iptables -y
+    pid_one_command: /usr/lib/systemd/systemd
+    
   - name: hello
     driver:
       image: alpine:latest
